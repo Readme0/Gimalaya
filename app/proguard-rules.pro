@@ -19,3 +19,24 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+#yanghz:添加混淆，现在还不懂是什么意思，先加上
+
+-dontwarn okio.**
+-keep class okio.** { *;}
+​
+-dontwarn okhttp3.**
+-keep class okhttp3.** { *;}
+​
+-dontwarn com.google.gson.**
+-keep class com.google.gson.** { *;}
+​
+-dontwarn android.support.**
+-keep class android.support.** { *;}
+​
+-dontwarn com.ximalaya.ting.android.player.**
+-keep class com.ximalaya.ting.android.player.** { *;}
+​
+-dontwarn com.ximalaya.ting.android.opensdk.**
+-keep interface com.ximalaya.ting.android.opensdk.** {*;}
+-keep class com.ximalaya.ting.android.opensdk.** { *; }
