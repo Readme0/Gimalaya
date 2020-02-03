@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.gimalaya.utils.LogUtil;
 import com.ximalaya.ting.android.opensdk.datatrasfer.CommonRequest;
 import com.ximalaya.ting.android.opensdk.datatrasfer.IDataCallBack;
 import com.ximalaya.ting.android.opensdk.model.category.Category;
@@ -31,14 +32,16 @@ public class MainActivity extends AppCompatActivity {
                     int size = categories.size();
                     Log.d(TAG,"categories size -- " + size);  //alt+enter创建tag,create constant field 'TAG' -- MainActivity
                     for(Category category : categories){
-                        Log.d(TAG,"category -- " + category.getCategoryName());
+                        //Log.d(TAG,"category -- " + category.getCategoryName());
+                        LogUtil.d(TAG, "category -- " + category.getCategoryName());  //用自己写的LogUtil类来过滤log
                     }
                 }
             }
 
             @Override
             public void onError(int i, String s) {
-                Log.e(TAG,"erro code -- " + i + "erro msg -- " + s);
+                //Log.e(TAG,"erro code -- " + i + "erro msg -- " + s);
+                LogUtil.d(TAG, "erro code -- " + i + "erro msg -- " + s);
             }
         });
     }
